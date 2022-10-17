@@ -14,6 +14,9 @@ mvn package
 
 # How to use
 ```java
+import cn.nhcqc.pack.BytesPadding;
+import cn.nhcqc.pack.BytesPadding.FlagTailZero;
+
 byte[] original = new byte[] { (byte) 0xAB };
 // PKCS #5 padding
 byte[] padded5 = BytesPadding.padPKCS5 (original);
