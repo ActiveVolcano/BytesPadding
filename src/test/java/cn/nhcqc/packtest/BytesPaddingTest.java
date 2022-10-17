@@ -1,6 +1,7 @@
 package cn.nhcqc.packtest;
 
 import cn.nhcqc.pack.BytesPadding;
+import cn.nhcqc.pack.BytesPadding.FlagRandom;
 import cn.nhcqc.pack.BytesPadding.FlagTailZero;
 
 import org.junit.jupiter.api.*;
@@ -107,6 +108,7 @@ public class BytesPaddingTest {
         Assertions.assertEquals (null, BytesPadding.padISO10126 (null, 16));
         Assertions.assertEquals (original1, BytesPadding.padISO10126 (original1, -1));
         Assertions.assertEquals (original1, BytesPadding.padISO10126 (original1, 0));
+
         Assertions.assertEquals ((byte) 4, BytesPadding.padISO10126 (original0, 4)[3]);
         Assertions.assertEquals ((byte) 1, BytesPadding.padISO10126 (original1, 1)[1]);
         // System.out.println (base16 (BytesPadding.padISO10126 (original1, 16)));
@@ -114,6 +116,9 @@ public class BytesPaddingTest {
         Assertions.assertEquals ((byte) 1, BytesPadding.padISO10126 (original16, 1)[16]);
         Assertions.assertEquals ((byte) 4, BytesPadding.padISO10126 (original16, 10)[19]);
         Assertions.assertEquals ((byte) 16, BytesPadding.padISO10126 (original16, 16)[31]);
+
+        Assertions.assertEquals ((byte) 4, BytesPadding.padISO10126 (original0, 4, FlagRandom.SECURE)[3]);
+        Assertions.assertEquals ((byte) 1, BytesPadding.padISO10126 (original1, 1, FlagRandom.SECURE)[1]);
     }
 
     //------------------------------------------------------------------------
