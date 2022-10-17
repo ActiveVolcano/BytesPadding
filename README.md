@@ -2,6 +2,7 @@
 The Bouncy Castle library already provides padding functions.
 However, that is rather huge, rather complex,
 and sometimes what we need is only an easy-to-use lightweight library.
+
 So here it is, BytesPadding, a tiny bytes padding library for Java.
 
 # How to compile
@@ -32,3 +33,5 @@ unpad = BytesPadding.unpad (padded0_16);
 // unpadding zero-padded bytes and keeping a tail 0
 unpad = BytesPadding.unpad (padded0_16, FlagTailZero.KEEP_ONE);
 ```
+
+See Javadoc (API docs) and test code for details.
