@@ -62,4 +62,12 @@
 		</dependency>
 	</dependencies>
 
+	<distributionManagement>
+		<repository>
+		<id>github</id>
+		<name>GitHub ActiveVolcano Apache Maven Packages</name>
+		<url>https://maven.pkg.github.com/ActiveVolcano/BytesPadding</url>
+		</repository>
+	</distributionManagement>
+
 </project>
